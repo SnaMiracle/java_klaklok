@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MidTermKlaKlouk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/MidTermKlaKlouk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
