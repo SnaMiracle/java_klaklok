@@ -505,14 +505,28 @@ public class KlaKlouk extends javax.swing.JFrame {
 
     private void resultCheck() {
         double winAmount = 0.0;
+        double totalBet = 0.0;
         String resultindex = "";
+        
         for (int i = 0; i < 3; i++) {
             winAmount += playerBet[result[i]];
             resultindex += String.valueOf(result[i]) + " , ";
         }
+        
+        for (double bet : playerBet) {
+            totalBet += bet;
+        }
+        
         testLabel.setText(resultindex);
-        balance += winAmount;
-        JOptionPane.showMessageDialog(null, "You Win : " + winAmount);
+        
+        if(winAmount > 0) {
+            balance += winAmount;
+            JOptionPane.showMessageDialog(null, "You win : " + winAmount);
+        }else {
+            balance -= totalBet;
+            JOptionPane.showMessageDialog(null, "You Lost! " + totalBet);
+        }
+        
         playerBet = new double[6];
         result = new int[3];
         lblDepo.setText("ទឹកប្រាក់: ៛" + balance);
